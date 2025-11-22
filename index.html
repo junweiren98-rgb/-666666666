@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>RetroCam Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Patrick Hand', cursive;
+        overflow: hidden; /* Prevent scrolling on pull-to-refresh */
+        touch-action: none;
+      }
+      /* Custom Scrollbar for Map Popups if needed */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 3px;
+      }
+      
+      /* Leaflet Custom Pin */
+      .custom-pin {
+        background: transparent;
+        border: none;
+      }
+
+      /* Printing Animation Keyframes */
+      @keyframes ejectPaper {
+        0% {
+            transform: translateY(0);
+            clip-path: inset(100% 0 0 0);
+        }
+        100% {
+            transform: translateY(-220px);
+            clip-path: inset(0 0 0 0);
+        }
+      }
+      .animate-eject {
+        animation: ejectPaper 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+
+      @keyframes developPhoto {
+        0% { filter: grayscale(100%) brightness(0.4) blur(2px); }
+        100% { filter: grayscale(0%) brightness(1) blur(0); }
+      }
+      .animate-develop {
+        animation: developPhoto 4s ease-in forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "leaflet": "https://aistudiocdn.com/leaflet@^1.9.4"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

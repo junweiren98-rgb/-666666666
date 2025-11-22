@@ -1,0 +1,8 @@
+{
+  "name": "拍立得Copy of RetroCam Studio",
+  "description": "A nostalgic instant camera experience with drag-and-drop publishing to a global map.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
